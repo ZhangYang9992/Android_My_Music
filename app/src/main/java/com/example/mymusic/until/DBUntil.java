@@ -13,7 +13,7 @@ public class DBUntil extends SQLiteOpenHelper {
 
     private static final String databaseName = "db_music.db"; // 数据库名称 以db结尾
 
-    private static SQLiteDatabase con; // 链接数据库的链接，通过该对象可以操作数据库
+    public static SQLiteDatabase con; // 链接数据库的链接，通过该对象可以操作数据库
 
     private Context context;
 
