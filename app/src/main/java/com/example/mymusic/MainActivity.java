@@ -26,7 +26,10 @@ public class MainActivity extends AppCompatActivity {
         // 获取登录信息
         EditText accountT = findViewById(R.id.login_account);
         EditText pwdT = findViewById(R.id.login_pwd);
-        Button denglu = findViewById(R.id.login_denglu_btn);
+        Button loginBtn = findViewById(R.id.login_login_btn);
+
+        // 执行登录
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
