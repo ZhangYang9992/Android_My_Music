@@ -5,6 +5,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.content.Context;
 import androidx.annotation.Nullable;
 
+import com.example.mymusic.R;
+
 /**
  * 用于链接数据库
  */
@@ -47,11 +49,15 @@ public class DBUntil extends SQLiteOpenHelper {
                 ")");
 
         // 插入数据
+        // 头像数据
+        String user_avatar_path = FileUntil.saveDrawableToFileSave(context, R.drawable.user1);
+        String admin_avatar_path = FileUntil.saveDrawableToFileSave(context, R.drawable.admin);
+
         // 用户数据
-        String[] data = {"admin", "小羊", "123456", "0", "", "天津", "女"};
+        String[] data = {"admin", "小羊", "123456", "0", user_avatar_path, "天津", "女"};
         db.execSQL("insert into d_user (account, nickname, pwd, pow, img, address, sex) values(?, ?, ?, ?, ?, ?, ?)", data);
         // 管理员数据
-        String[] data1 = {"root", "小杰", "123456", "1", "", "杭州", "男"};
+        String[] data1 = {"root", "小杰", "123456", "1", admin_avatar_path, "杭州", "男"};
         db.execSQL("insert into d_user (account, nickname, pwd, pow, img, address, sex) values(?, ?, ?, ?, ?, ?, ?)", data1);
 
         // --------------------------------------
