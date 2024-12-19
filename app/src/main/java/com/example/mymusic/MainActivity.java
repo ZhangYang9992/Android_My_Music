@@ -1,5 +1,6 @@
 package com.example.mymusic;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.mymusic.activity.RegisterActivity;
 import com.example.mymusic.dao.UserDao;
 import com.example.mymusic.until.DBUntil;
 import com.example.mymusic.until.Tools;
@@ -31,8 +33,9 @@ public class MainActivity extends AppCompatActivity {
         EditText accountT = findViewById(R.id.login_account);
         EditText pwdT = findViewById(R.id.login_pwd);
         Button loginBtn = findViewById(R.id.login_login_btn);
+        Button registerBtn = findViewById(R.id.login_register_btn);
 
-        // 执行登录
+        // 登录按钮点击
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,6 +61,16 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
+            }
+        });
+
+        // 注册按钮点击
+        registerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 打开注册界面
+                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(intent);
             }
         });
 
