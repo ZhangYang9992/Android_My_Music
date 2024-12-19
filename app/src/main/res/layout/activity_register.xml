@@ -22,6 +22,7 @@
 
     <!-- login logo -->
     <ImageView
+        android:id="@+id/register_avatar"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:src="@drawable/avater_default"
@@ -96,7 +97,6 @@
         android:textColorHint="#818181"
         android:background="@drawable/edit_login_bg"
         android:padding="10dp"
-        android:inputType="textPassword"
         />
 
     <!-- 性别 -->
